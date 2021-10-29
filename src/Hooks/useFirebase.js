@@ -7,50 +7,34 @@ initializeAuthentication();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
-    const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
 
-
-    // sign in process with google
-    const signInWithGoogle = () => {
+    // Login with Google
+    const signInUsingGoogle = () => {
         setIsLoading(true);
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                console.log(result.user);
-                setUser(result.user);
-            })
-            .catch(error => {
-                setError(error.message)
-            })
-            .finally(() => setIsLoading(false));
+        return signInWithPopup(auth, googleProvider);
     };
 
-    // sign in process with github
-    const signInWithGithub = () => {
+    // Login with github
+    const signInUsingGithub = () => {
         setIsLoading(true);
-        signInWithPopup(auth, githubProvider)
-            .then(result => {
-                console.log(result.user);
-                setUser(result.user);
-            })
-            .catch(error => {
-                setError(error.message)
-            })
-            .finally(() => setIsLoading(false));
+        return signInWithPopup(auth, githubProvider)
     }
 
+    // User logout
     const logOut = () => {
         setIsLoading(true);
+        // window.location.href = '/';
         signOut(auth)
             .then(() => { })
             .finally(() => setIsLoading(false));
     };
 
-    // observation to user state change when signIn or signOut
+    // Observation for user state change when login.
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, user => {
             if (user) {
@@ -62,15 +46,14 @@ const useFirebase = () => {
             setIsLoading(false);
         });
         return () => unsubscribed;
-    }, []);
+    }, [auth]);
 
     return {
         user,
-        error,
         isLoading,
         logOut,
-        signInWithGoogle,
-        signInWithGithub,
+        signInUsingGoogle,
+        signInUsingGithub
     }
 };
 

@@ -9,7 +9,7 @@ const Header = () => {
 
     const activeStyle = {
         fontWeight: "bold",
-        color: "green"
+        color: "#e8604c"
     };
     return (
         <div>
