@@ -14,19 +14,22 @@ const MyOrders = () => {
 
     // CANCEL ORDER
     const handleCancelOrder = id => {
-        const url = `http://localhost:4000/orders/${id}`;
-        fetch(url, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount) {
-                    alert('Deleted')
-                    const remaining = myOrders.filter(order => order._id !== id);
-                    setServices(remaining);
-                }
+        const proceed = window.confirm("Are you sure, you want to delete?");
+        if (proceed) {
+            const url = `http://localhost:4000/orders/${id}`;
+            fetch(url, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount) {
+                        alert('Deleted Successfully')
+                        const remainingOrder = myOrders.filter(order => order._id !== id);
+                        setServices(remainingOrder);
+                    }
+                })
+        }
     }
 
     return (
