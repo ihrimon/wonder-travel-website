@@ -40,7 +40,7 @@ const Header = () => {
                                 <NavLink className="nav-link" activeStyle={activeStyle} to="/manageOrders">Manage Orders</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" activeStyle={activeStyle} to="/addPackages">Add Packages</NavLink>
+                            <NavLink className="nav-link" activeStyle={activeStyle} to="/addPackages">Add Packages</NavLink>
                             </li>
                         </ul>
 

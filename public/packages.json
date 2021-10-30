@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Prambanan, Yogya",
+        "price": "299.00",
+        "description": "There are two famous temples in Indonesia, which are Borobudur and Prambanan, and they both are located in Special Region of Yogyakarta. ",
+        "img": "https://i.ibb.co/HDRPZLq/1.png"
+    },
+    {
+        "id": 2,
+        "name": "Rice Terraces, Bali",
+        "price": "199.00",
+        "description": "Jatiluwih rice terraces are located in Tabanan regency, about a 2 hour drive from Kuta. They are best reached by heading up the West coast for a bit and then turning towards North Bali.",
+        "img": "https://i.ibb.co/sgGcPCT/2.png"
+    },
+    {
+        "id": 3,
+        "name": "Magic of Italy Tours",
+        "price": "150.00",
+        "description": "Evidence of magic use and witch trials were prevalent in the Early Modern period, and Inquisitorial prosecution of witches and magic users in Italy during this period was widely documented. ",
+        "img": "https://i.ibb.co/FqGWVg7/4.png"
+    },
+    {
+        "id": 4,
+        "name": "Peaceful Lake",
+        "price": "100.99",
+        "description": "Jatiluwih rice terraces are located in Tabanan regency, about a 2 hour drive from Kuta. They are best reached by heading up the West coast for a bit and then turning towards North Bali.",
+        "img": "https://i.ibb.co/FqGWVg7/4.png"
+    },
+    {
+        "id": 1,
+        "name": "WaterFall",
+        "price": "299.00",
+        "description": "There are two famous temples in Indonesia, which are Borobudur and Prambanan, and they both are located in Special Region of Yogyakarta. ",
+        "img": "https://i.ibb.co/h8n2CCy/5.png"
+    },
+    {
+        "id": 2,
+        "name": "Mountain",
+        "price": "199.00",
+        "description": "Jatiluwih rice terraces are located in Tabanan regency, about a 2 hour drive from Kuta. They are best reached by heading up the West coast for a bit and then turning towards North Bali.",
+        "img": "https://i.ibb.co/tz8tkQm/6.png"
+    }
+]
