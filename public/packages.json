@@ -1,44 +1,50 @@
 [
     {
-        "id": 1,
-        "name": "Prambanan, Yogya",
-        "price": "299.00",
-        "description": "There are two famous temples in Indonesia, which are Borobudur and Prambanan, and they both are located in Special Region of Yogyakarta. ",
-        "img": "https://i.ibb.co/HDRPZLq/1.png"
+        "name": "Sea Beach",
+        "price": "100.00",
+        "description": "Tour means visit to a place or area, especially one during which you look around the place.",
+        "img": "https://i.ibb.co/wgJSLfQ/01.png"
     },
     {
-        "id": 2,
-        "name": "Rice Terraces, Bali",
-        "price": "199.00",
-        "description": "Jatiluwih rice terraces are located in Tabanan regency, about a 2 hour drive from Kuta. They are best reached by heading up the West coast for a bit and then turning towards North Bali.",
-        "img": "https://i.ibb.co/sgGcPCT/2.png"
+        "name": "Rice Terraces",
+        "price": "120.00",
+        "description": "Tour means visit to a place or area, especially one during which you look around the place.",
+        "img": "https://i.ibb.co/m5LBKN6/02.png"
     },
     {
-        "id": 3,
-        "name": "Magic of Italy Tours",
+        "name": "Dark Forest",
         "price": "150.00",
-        "description": "Evidence of magic use and witch trials were prevalent in the Early Modern period, and Inquisitorial prosecution of witches and magic users in Italy during this period was widely documented. ",
-        "img": "https://i.ibb.co/FqGWVg7/4.png"
+        "description": "Tour means visit to a place or area, especially one during which you look around the place.",
+        "img": "https://i.ibb.co/bRGbZ1m/03.png"
     },
     {
-        "id": 4,
-        "name": "Peaceful Lake",
+        "name": "Italy Tour",
         "price": "100.99",
-        "description": "Jatiluwih rice terraces are located in Tabanan regency, about a 2 hour drive from Kuta. They are best reached by heading up the West coast for a bit and then turning towards North Bali.",
-        "img": "https://i.ibb.co/FqGWVg7/4.png"
+        "description": "Tour means visit to a place or area, especially one during which you look around the place.",
+        "img": "https://i.ibb.co/0Fr95pG/04.png"
     },
     {
-        "id": 1,
-        "name": "WaterFall",
+        "name": "Hot Desert",
         "price": "299.00",
-        "description": "There are two famous temples in Indonesia, which are Borobudur and Prambanan, and they both are located in Special Region of Yogyakarta. ",
-        "img": "https://i.ibb.co/h8n2CCy/5.png"
+        "description": "Tour means visit to a place or area, especially one during which you look around the place.",
+        "img": "https://i.ibb.co/7nCjggt/5.png"
     },
     {
-        "id": 2,
+        "name": "Peaceful Lake",
+        "price": "299.00",
+        "description": "Tour means visit to a place or area, especially one during which you look around the place.",
+        "img": "https://i.ibb.co/1qvz0ng/06.png"
+    },
+    {
+        "name": "Winter Tour",
+        "price": "399.00",
+        "description": "Tour means visit to a place or area, especially one during which you look around the place.",
+        "img": "https://i.ibb.co/YXsfrjt/07.png"
+    },
+    {
         "name": "Mountain",
-        "price": "199.00",
-        "description": "Jatiluwih rice terraces are located in Tabanan regency, about a 2 hour drive from Kuta. They are best reached by heading up the West coast for a bit and then turning towards North Bali.",
-        "img": "https://i.ibb.co/tz8tkQm/6.png"
+        "price": "299.00",
+        "description": "Tour means visit to a place or area, especially one during which you look around the place.",
+        "img": "https://i.ibb.co/R3kg77V/08.png"
     }
 ]

@@ -1,25 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import Service from '../Service/Service';
-import './Services.css';
+import SinglePackage from '../Service/SinglePackage';
+// import SinglePackage from '../Service/singlePackage';
+
+import './Packages.css';
 
 const Packages = () => {
-    const [services, setServices] = useState([])
+    const [packages, setServices] = useState([])
     useEffect(() => {
-        fetch('http://localhost:4000/packages')
+        fetch('https://evening-brushlands-52503.herokuapp.com/packages')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
 
     return (
-        <div id="services">
-            <h2 className="text-primary mt-5">Our services</h2>
-            <div className="service-container">
-                {
-                    services.map(service => <Service
-                        key={service.id}
-                        service={service}
-                    ></Service>)
-                }
+        <div>
+            <div className="container my-5">
+                <h2 className="mb-4 text-center theme-color">Best Package For Your Travel
+</h2>
+                <div className="row row-cols-1 row-cols-md3 g-4">
+                    {
+                        packages.map(singlePackage => <SinglePackage
+                            key={singlePackage._id}
+                            singlePackage={singlePackage}
+                        ></SinglePackage>)
+                    }
+                </div>
             </div>
         </div>
     );

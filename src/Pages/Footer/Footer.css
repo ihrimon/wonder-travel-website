@@ -1,0 +1,16 @@
+.footer{
+    color: #fff;
+    background-color: #313041;
+}
+.footer a{
+    color: #fff;
+}
+.theme-btn{
+    background-color: #e8604c;
+}
+.important-list li{
+    list-style-type: none;
+}
+.service-list li:nth-child(1), .important-list li:nth-child(1){
+    font-weight: bold;
+}

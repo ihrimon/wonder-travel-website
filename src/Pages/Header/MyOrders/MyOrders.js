@@ -1,22 +1,26 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../../Hooks/useAuth';
 
 const MyOrders = () => {
-    const [myOrders, setServices] = useState([]);
+    const [myOrders, setMyOrders] = useState([]);
     const { user } = useAuth();
+
+    const email = user.email
+    console.log(email);
 
 
     useEffect(() => {
-        fetch('http://localhost:4000/orders')
-            .then(res => res.json())
-            .then(data => setServices(data))
-    }, []);
+        axios.post("https://evening-brushlands-52503.herokuapp.com/orders/email", { email: `${email}` })
+            .then(res => setMyOrders(res.data));
+    }, [])
 
+    
     // CANCEL ORDER
     const handleCancelOrder = id => {
-        const proceed = window.confirm("Are you sure, you want to delete?");
+        const proceed = window.confirm("Are you sure, you want to delete it?");
         if (proceed) {
-            const url = `http://localhost:4000/orders/${id}`;
+            const url = `https://evening-brushlands-52503.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -26,7 +30,7 @@ const MyOrders = () => {
                     if (data.deletedCount) {
                         alert('Deleted Successfully')
                         const remainingOrder = myOrders.filter(order => order._id !== id);
-                        setServices(remainingOrder);
+                        setMyOrders(remainingOrder);
                     }
                 })
         }
@@ -34,8 +38,8 @@ const MyOrders = () => {
 
     return (
         <div className="container">
-            <h2 className="mt-5 mb-3">My Orders</h2>
-            <h4>{user.displayName}</h4>
+            <h2 className="mt-5 mb-3 text-center">My Orders</h2>
+            {/* <h4>{user.displayName}</h4> */}
             <table class="table border table-hover">
                 <thead>
                     <tr>

@@ -1,0 +1,26 @@
+.img-banner{
+    background-image: url(../../../images/banner.png); 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 150px 0;
+}
+
+.color-theme{
+    color: white;
+    padding: 10px 20px;
+    background-color: #e8614c52;
+    border: 1px solid orange;
+}
+
+.text-size{
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.theme-button{
+    background-color: #e8604c;
+    color: white;
+    border-radius: 10px;
+}
