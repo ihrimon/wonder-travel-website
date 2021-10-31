@@ -260,7 +260,6 @@ export default Booking; */
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../Hooks/useAuth';
-import './Booking.css';
 
 
 const Booking = () => {
@@ -268,7 +267,7 @@ const Booking = () => {
     const { user } = useAuth();
 
     const onSubmit = data => {
-        fetch('http://localhost:4000/orders', {
+        fetch('https://evening-brushlands-52503.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -285,20 +284,48 @@ const Booking = () => {
     };
 
     return (
-        <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
 
-            <input defaultValue={user.displayName} {...register("name")} />
+        <div>
+            <div className="container">
+                <div className="w-50 mx-auto shadow-lg">
+                    <h3 className="text-center mt-5 pt-5 pb-3 theme-color">Please, Order your favorite package</h3>
+                    <div className="text-start px-5">
+                        <form onSubmit={handleSubmit(onSubmit)} className="px-4 pb-5">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">User Name</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" defaultValue={user.displayName} {...register("name", { required: true })} />
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">User Email</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" defaultValue={user.email} {...register("email", { required: true })} />
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Package Title</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" defaultValue={user.name} {...register("title", { required: true })} placeholder="Package title" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Package Price</label>
+                                <input type="number" class="form-control" id="exampleFormControlInput1" defaultValue="" {...register("price", { required: true })} placeholder="$ price" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">User Address</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" defaultValue="" {...register("address", { required: true })} placeholder="User address" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">User Number</label>
+                                <input type="number" class="form-control" id="exampleFormControlInput1" defaultValue="" {...register("number", { required: true })} placeholder="number" />
+                            </div>
 
-            <input defaultValue={user.email} {...register("email", { required: true })} />
-            {errors.email && <span className="error">This field is required</span>}
-            <input defaultValue={user.name} placeholder="Package name" {...register("title")} />
-            <input type="number" defaultValue={user.price} placeholder="Package price" {...register("price")} />
-            <input placeholder="Address" defaultValue="" {...register("address")} />
-            <input placeholder="City" defaultValue="" {...register("city")} />
-            <input placeholder="phone number" defaultValue="" {...register("phone")} />
+                            <span className="w-50 mx-auto" style={{display: "block"}}>
+                            <input type="submit" className="btn theme-btn w-100 text-center " />
+                            </span>
+                        </form>
+                    </div>
+                </div>
 
-            <input type="submit" />
-        </form>
+            </div>
+
+        </div>
     );
 };
 

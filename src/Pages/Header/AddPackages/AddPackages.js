@@ -17,6 +17,7 @@ const AddPackages = () => {
     return (
         <div className="container w-25 shadow-lg my-5">
             <h4 className="text-center py-4">Add Package</h4>
+            <div className="text-start">
             <form onSubmit={handleSubmit(onSubmit)} className="px-4 pb-5">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Package Title</label>
@@ -37,6 +38,7 @@ const AddPackages = () => {
 
                 <input type="submit" className="btn btn-success #e8604c w-75 text-center" />
             </form>
+            </div>
         </div>
     );
 };

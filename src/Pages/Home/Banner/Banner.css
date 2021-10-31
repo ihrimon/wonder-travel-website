@@ -9,13 +9,14 @@
 
 .color-theme{
     color: white;
-    padding: 10px 20px;
-    background-color: #e8614c52;
+    padding: 20px 20px;
+    background-color: #e8614c67;
     border: 1px solid orange;
+    border-radius: 30px;
 }
 
 .text-size{
-    font-size: 70px;
+    font-size: 4rem;
     font-weight: 700;
 }
 

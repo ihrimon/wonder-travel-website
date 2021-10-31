@@ -39,7 +39,6 @@ const ManageOrders = () => {
                             <th className="text-start">SL.</th>
                             <th className="text-start">Name</th>
                             <th className="text-start">Email</th>
-                            {/* <th className="text-start">Reg. Date</th> */}
                             <th className="text-start">Address</th>
                             <th className="text-start">Service</th>
                             <th className="text-start">Amount</th>
@@ -65,7 +64,6 @@ const ManageOrders = () => {
                                 } */}
                                     <td><button onClick={() => handleCancelOrder(order._id)} className="btn btn-sm btn-danger">Cancel</button></td>
                                 </tr>
-
                             )
                         }
                     </tbody>
