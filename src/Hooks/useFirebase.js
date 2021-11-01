@@ -28,7 +28,6 @@ const useFirebase = () => {
     // User logout
     const logOut = () => {
         setIsLoading(true);
-        // window.location.href = '/';
         signOut(auth)
             .then(() => { })
             .finally(() => setIsLoading(false));

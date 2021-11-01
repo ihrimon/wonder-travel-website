@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import swal from 'sweetalert';
 
 const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
@@ -9,31 +10,53 @@ const ManageOrders = () => {
             .then(data => setOrders(data))
     }, [])
 
-    // CANCEL ORDER
-    const handleCancelOrder = id => {
-        const proceed = window.confirm("Are you sure, you want to delete?");
-        if (proceed) {
-            const url = `https://evening-brushlands-52503.herokuapp.com/orders/${id}`;
-            fetch(url, {
-                method: 'DELETE'
+    // Order Approval Status
+    const handleApproved = (id) => {
+        fetch(`https://evening-brushlands-52503.herokuapp.com/orders/${id}`, {
+            method: 'UPDATE',
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    swal("Approved!", "Approved Successfully!", "success");
+                }
             })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    if (data.deletedCount) {
-                        alert('Deleted')
-                        const remaining = orders.filter(order => order._id !== id);
-                        setOrders(remaining);
-                    }
-                })
-        }
-
     }
+
+    // Cancel Order
+    const handleCancelOrder = id => {
+        swal({
+            title: "Are you sure?",
+            text: "Cancel for this order.",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    fetch(`https://evening-brushlands-52503.herokuapp.com/orders/${id}`, {
+                        method: 'DELETE'
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.deletedCount > 0) {
+                                swal("Deleted!", "Deleted Successfully!", "success");
+                            }
+                        })
+                } else {
+                    swal("Delete Canceled!");
+                }
+            });
+    }
+
     return (
         <div className="container">
             <h2 className="mt-5 mb-3">Manage All Orders</h2>
             <div className="table-responsive">
-                <table class="table border table-hover">
+                <table className="table border table-hover">
                     <thead>
                         <tr>
                             <th className="text-start">SL.</th>
@@ -56,12 +79,10 @@ const ManageOrders = () => {
                                     <td className="text-start">{order.address}</td>
                                     <td className="text-start">{order.title}</td>
                                     <td className="text-start">${order.price}</td>
-                                    <td className="text-start">
-                                        <button className="btn btn-sm btn-success">Approve</button>
-                                    </td>
-                                    {/* {
-                                    order.status === 'Pending' ? <td className="text-danger fw-bold">{order.status}</td> : <td className="text-success fw-bold">{order.status}</td>
-                                } */}
+                                    {
+                                        order.status === 'Pending' ? <td className="text-danger fw-bold">{order.status}</td> : <td className="text-success fw-bold">{order.status}</td>
+                                    }
+                                    <td><button onClick={() => handleApproved(order._id)} className="btn btn-sm btn-success">Approved</button></td>
                                     <td><button onClick={() => handleCancelOrder(order._id)} className="btn btn-sm btn-danger">Cancel</button></td>
                                 </tr>
                             )

@@ -68,7 +68,7 @@ const Footer = () => {
             <div className="container mt-5 pt-5 pb-3">
                 <div>
                     <div className="row">
-                        <div className="col-6 col-lg-3 text-start">
+                        <div className="col-6 col-lg-3 mb-lg-0 mb-4 text-start">
                             <ul className="important-list p-0 px-lg-4">
                                 <li className="text-start">Quick Links</li>
                                 <li className="text-start">Home</li>
@@ -92,7 +92,7 @@ const Footer = () => {
                                 <li className="text-start">Contact Info</li>
                                 <li className="text-start my-1"><IoLocationSharp className="me-1" style={{ color: '#e8604c' }} /> 123 street, California</li>
                                 <li className="text-start my-1"><BsFillTelephoneFill className="me-1" style={{ color: '#e8604c' }} />+8801322810867</li>
-                                <li className="text-start my-1"><MdEmail className="me-1" style={{ color: '#e8604c' }} />wonder.world@gmail.com</li>
+                                <li className="text-start my-1"><MdEmail className="me-1" style={{ color: '#e8604c' }} />website@gmail.com</li>
                             </ul>
                         </div>
                         <div className="col-6 col-lg-3">
@@ -100,7 +100,7 @@ const Footer = () => {
                                 <li className="text-start mb-1">Make a reservation</li>
                                 <li className="text-start mt-1 mb-2" style={{ lineHeight: 1.6 }}>Our team is always available 24/7 to answer your queries</li>
                                 <li className="text-start mt-1">
-                                    <button className="rounded-pill btn theme-btn my-2" type="tel">+8801322810867</button>
+                                    <button className="rounded-pill btn theme-btn my-2 px-3" type="tel">+88012345678</button>
                                 </li>
                             </ul>
                         </div>
