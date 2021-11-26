@@ -8,7 +8,7 @@ This is live site link of (Firebase):  [WONDER TRAVEL Website](https://wonder-tr
     <li>You can see their wonderful services.</li>
     <li>You can easily login and get a wonderful package</li>
     <li>You can see for the best world scenery</li>
-    <li>Enjoy you holiday journey for purchase a tour package.</li>
+    <li>Enjoy you holiday journey.</li>
 </ul>
 
-Thanks for watching visit my wonderful website.
+Thanks for watching visit my tourism website.
